@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 80px; /* Keeps space for fixed header */
+}
+
+.main-header {
+    background-color: #03770c;
+    padding: 20px;
+    position: fixed; /* Keep header on top while scrolling */
+    top: 0; /* Position it at the top of the viewport */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    z-index: 1000; /* Ensure header stays above other content */
+}
+
+.header-icon {
+    position: absolute;
+    top: 2.5px;
+    left: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; /* Makes the icon circular */
+    object-fit: cover; /* Ensures the image fits within the circle */
+}
+
+.header-title {
+    position: absolute;
+    top: 10px;
+    left: 60px; /* Adjust based on icon width + spacing */
+    color: white;
+    font-size: 15px; /* Adjust this in media queries */
+    font-family: 'Times New Roman';
+
+}
+
+/* Background Image */
+body::before {
+    content: "";
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 100%; /* Make it full width for responsiveness */
+    height: 100%; /* Make it full height for responsiveness */
+    background-image: url(/imagee/462546764_8841718245891474_5829527309406578294_n.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-position: center; /* Centers the image */
+    transform: translate(-50%, -50%); /* Offsets to center the image */
+    opacity: 0.2; /* Low opacity for the background */
+    z-index: -1; /* Places the image behind other content */
+}
+
+.content {
+    padding: 20px;
+    color: #333;
+    text-align: center; /* Centers the text within the content */
+}
+
+.centered-image {
+    width: 100%; /* Make the image responsive */
+    max-width: 600px; /* Set a max width for the rectangle */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures the image covers the specified dimensions */
+    margin: 20px 0; /* Adds some space around the image */
+}
+
+.centered-text {
+    max-width: 650px; /* Optional: set a max width for the text block */
+    margin: 20px auto; /* Centers the text block and adds vertical spacing */
+    line-height: 1.4; /* Increases the line height for better readability */
+    text-align: justify; /* Optional: Justifies the text for a neat appearance */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 20px; /* Smaller font size for mobile */
+        left: 60px; /* Adjust position for smaller screens */
+    }
+
+    .header-icon {
+        width: 30px; /* Smaller icon for mobile */
+        height: 30px; /* Smaller icon for mobile */
+    }
+
+    .centered-image {
+        max-width: 100%; /* Ensure the image fills the width on small screens */
+    }
+
+    .centered-text {
+        max-width: 90%; /* More width on smaller screens */
+    }
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(243, 243, 243, 0.5); /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Round edges of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(4, 136, 32, 0.8); /* Color on hover */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin; /* Makes the scrollbar thin */
+    scrollbar-color: rgba(4, 136, 32, 0.8) transparent; /* Thumb color and track color */
+}
+
+/* Adjust color on hover for Firefox */
+*::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Color on hover */
+}
